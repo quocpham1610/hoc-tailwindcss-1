@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="build/tailwind.css">
+    <link rel="stylesheet" href="build/app.css">
+</head>
+
+<body>
+    <h1 class="px-5 py-8 rounded-lg border border-[#eee] text-center bg-white dark:bg-[#0F0D58]">
+        <img src="images/Logo.png" alt="" class="mb-5 max-w-[100px] mx-auto">
+    </h1>
+    <label for="toggle" class=" inline-block
+        cursor-pointer toggle-switch">
+
+        <input type="checkbox" name="" id="toggle" class="darkmode-input hidden">
+        <div
+            class="w-[100px] h-[40px] border border-[#ccc] rounded-full fixed right-5 bottom-5 z-50 p-[5px] transition-colors">
+        </div>
+        <div class="w-7 h-7 bg-[#9c2929] rounded-full transition-transform darkmode-spinner"></div>
+    </label>
+    <div class="mx-auto max-w-[1200px] grid grid-cols-4 gap-x-5 p-5">
+        <div class="px-5 py-8 rounded-lg border border-[#eee] text-center bg-white dark:bg-[#0F0D58]">
+            <img src="images/computer.png" alt="" class="mb-5 max-w-[100px] mx-auto">
+            <h3 class="text-lg font-semibold mb-6 text-[#0F0D58] dark:text-white">Online learning</h3>
+            <div class="text-sm leading-loose text-[#9191B4] font-normal">
+                Online learning, also known as e-learning, refers to the process of acquiring knowledge
+                or skills through digital platforms and technologies. It encompasses a wide range of
+                educational activities conducted over the internet, from formal courses offered by educational
+                institutions to informal learning through online resources.
+            </div>
+        </div>
+        <div class="px-5 py-8 rounded-lg border border-[#eee] text-center bg-white dark:bg-[#0F0D58]">
+            <img src="images/education.png" alt="" class="mb-5 max-w-[100px] mx-auto">
+            <h3 class="text-lg font-semibold mb-6 text-[#0F0D58] dark:text-white">Education</h3>
+            <div class="text-sm leading-loose text-[#9191B4] font-normal">
+                Education is the process of acquiring knowledge, skills, values, and attitudes that empower individuals
+                to understand the world around them, develop critical thinking abilities, and contribute positively to
+                society. It encompasses formal instruction provided by schools, colleges, and universities, as well as
+                informal learning experiences gained through interactions with peers, family, and the community.
+            </div>
+        </div>
+        <div class="px-5 py-8 rounded-lg border border-[#eee] text-center bg-white dark:bg-[#0F0D58]">
+            <img src="images/scholarship.png" alt="" class="mb-5 max-w-[100px] mx-auto">
+            <h3 class="text-lg font-semibold mb-6 text-[#0F0D58] dark:text-white">Scholarship</h3>
+            <div class="text-sm leading-loose text-[#9191B4] font-normal">
+                Many oppoturnities to obtaining a scholarship to a prestigious school presents a remarkable opportunity
+                for individuals to access high-quality education without the financial burden typically associated with
+                top-tier institutions. These scholarships are often awarded based on academic excellence, leadership
+                potential,
+                extracurricular achievements, and other criteria.
+            </div>
+        </div>
+        <div class="px-5 py-8 rounded-lg border border-[#eee] text-center bg-white dark:bg-[#0F0D58]">
+            <img src="images/signup.png" alt="" class="mb-5 max-w-[100px] mx-auto">
+            <h3 class="text-lg font-semibold mb-6 text-[#0F0D58] dark:text-white">SIGN UP</h3>
+            <div class="text-sm leading-loose text-[#9191B4] font-normal">
+                For more information please contact us at: 023023021302 / Address: 245/32 Walt Street/
+                Facebook: www.facebook.com/UniversityEasyAttend
+            </div>
+        </div>
+
+    </div>
+    <script>
+        const toggleSwitch = document.querySelector('.toggle-switch input[type="checkbox"]');
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme) {
+            document.documentElement.setAttribute('class', currentTheme);
+            if (currentTheme === 'dark') {
+                toggleSwitch.checked = true;
+            }
+        }
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.documentElement.setAttribute('class', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('class', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+        toggleSwitch.addEventListener('change', switchTheme);
+    </script>
+</body>
+
+</html>
